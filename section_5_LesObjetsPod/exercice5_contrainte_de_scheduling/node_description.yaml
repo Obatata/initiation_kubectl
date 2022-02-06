@@ -1,0 +1,155 @@
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    alpha.kubernetes.io/provided-node-ip: 10.106.0.3
+    csi.volume.kubernetes.io/nodeid: '{"dobs.csi.digitalocean.com":"284262677"}'
+    io.cilium.network.ipv4-cilium-host: 10.244.1.137
+    io.cilium.network.ipv4-health-ip: 10.244.1.246
+    io.cilium.network.ipv4-pod-cidr: 10.244.1.128/25
+    node.alpha.kubernetes.io/ttl: "0"
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: "2022-01-29T14:51:48Z"
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/instance-type: s-2vcpu-4gb
+    beta.kubernetes.io/os: linux
+    disktype: ssd
+    doks.digitalocean.com/node-id: 5f5ed2a4-2634-4ea8-86f4-a88e9df60a38
+    doks.digitalocean.com/node-pool: pool-hn1zv9hk2
+    doks.digitalocean.com/node-pool-id: 84426ef8-4bea-44ed-b2c5-a78819f6ef80
+    doks.digitalocean.com/version: 1.21.9-do.0
+    failure-domain.beta.kubernetes.io/region: lon1
+    kubernetes.io/arch: amd64
+    kubernetes.io/hostname: pool-hn1zv9hk2-u54ho
+    kubernetes.io/os: linux
+    node.kubernetes.io/instance-type: s-2vcpu-4gb
+    region: lon1
+    topology.kubernetes.io/region: lon1
+  name: pool-hn1zv9hk2-u54ho
+  resourceVersion: "609032"
+  uid: 5ad82094-ee9a-4f65-a5e5-8afa32f7a4ea
+spec:
+  providerID: digitalocean://284262677
+status:
+  addresses:
+  - address: pool-hn1zv9hk2-u54ho
+    type: Hostname
+  - address: 10.106.0.3
+    type: InternalIP
+  - address: 206.189.29.195
+    type: ExternalIP
+  allocatable:
+    cpu: 1900m
+    ephemeral-storage: "76063116777"
+    hugepages-2Mi: "0"
+    memory: 3110Mi
+    pods: "110"
+  capacity:
+    cpu: "2"
+    ephemeral-storage: 82533764Ki
+    hugepages-2Mi: "0"
+    memory: 4044108Ki
+    pods: "110"
+  conditions:
+  - lastHeartbeatTime: "2022-01-29T14:52:06Z"
+    lastTransitionTime: "2022-01-29T14:52:06Z"
+    message: Cilium is running on this node
+    reason: CiliumIsUp
+    status: "False"
+    type: NetworkUnavailable
+  - lastHeartbeatTime: "2022-02-02T20:09:21Z"
+    lastTransitionTime: "2022-01-29T14:51:47Z"
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: "2022-02-02T20:09:21Z"
+    lastTransitionTime: "2022-01-29T14:51:47Z"
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: "2022-02-02T20:09:21Z"
+    lastTransitionTime: "2022-01-29T14:51:47Z"
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: "2022-02-02T20:09:21Z"
+    lastTransitionTime: "2022-01-29T14:52:08Z"
+    message: kubelet is posting ready status. AppArmor enabled
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - docker.io/digitalocean/doks-debug:latest
+    sizeBytes: 292178301
+  - names:
+    - docker.io/library/mysql@sha256:afc453de0d675083ac00d0538521f8a9a67d1cce180d70fab9925ebcc87a0eba
+    - docker.io/library/mysql:5.7
+    sizeBytes: 154825615
+  - names:
+    - docker.io/cilium/cilium:v1.10.4
+    sizeBytes: 149522401
+  - names:
+    - docker.io/library/wordpress@sha256:7e476394586459bb622d3f37448cd07e703ec6906257d232542f2f51ff073da7
+    - docker.io/library/wordpress:4.9-apache
+    sizeBytes: 144535459
+  - names:
+    - k8s.gcr.io/kube-proxy:v1.21.9
+    sizeBytes: 35901787
+  - names:
+    - docker.io/digitalocean/do-csi-plugin:v3.0.0
+    sizeBytes: 32419144
+  - names:
+    - docker.io/digitalocean/arp-flusher:v0.0.2
+    sizeBytes: 25477523
+  - names:
+    - docker.io/cilium/operator:v1.10.4
+    sizeBytes: 22276692
+  - names:
+    - docker.io/coredns/coredns:1.8.4
+    sizeBytes: 13707249
+  - names:
+    - docker.io/digitalocean/do-agent:3.11.0
+    sizeBytes: 13092372
+  - names:
+    - k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.4.0
+    sizeBytes: 9016297
+  - names:
+    - docker.io/containous/whoami@sha256:7d6a3c8f91470a23ef380320609ee6e69ac68d20bc804f3a1c6065fb56cfa34e
+    - docker.io/containous/whoami:latest
+    sizeBytes: 2936940
+  - names:
+    - docker.io/library/alpine@sha256:21a3deaa0d32a8057914f36584b5288d2e5ecc984380bc0118285c70fa8c9300
+    - docker.io/library/alpine:latest
+    sizeBytes: 2822050
+  - names:
+    - docker.io/library/busybox:1.30
+    sizeBytes: 759700
+  - names:
+    - docker.io/cilium/cilium-init:2019-04-05
+    sizeBytes: 726346
+  - names:
+    - k8s.gcr.io/pause:3.1
+    sizeBytes: 317164
+  - names:
+    - k8s.gcr.io/pause@sha256:927d98197ec1141a368550822d18fa1c60bdae27b78b0c004f705f548c07814f
+    - k8s.gcr.io/pause:3.2
+    sizeBytes: 299513
+  nodeInfo:
+    architecture: amd64
+    bootID: 6a84dfb8-5a94-4a9a-a015-e1fd845b9d50
+    containerRuntimeVersion: containerd://1.4.12
+    kernelVersion: 4.19.0-17-cloud-amd64
+    kubeProxyVersion: v1.21.9
+    kubeletVersion: v1.21.9
+    machineID: 21ab8ffa905841a4924f0743c58c164d
+    operatingSystem: linux
+    osImage: Debian GNU/Linux 10 (buster)
+    systemUUID: 21ab8ffa-9058-41a4-924f-0743c58c164d

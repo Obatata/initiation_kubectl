@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: whoami-lb
+  labels:
+    app: whoami
+spec:
+  selector:
+    app: whoami
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 80

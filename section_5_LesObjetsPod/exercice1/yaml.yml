@@ -1,0 +1,96 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2022-02-02T12:47:36Z"
+  name: whoami
+  namespace: default
+  resourceVersion: "564714"
+  uid: 9ee28c4b-e35e-43e6-bca9-20e149b83f42
+spec:
+  containers:
+  - image: containous/whoami
+    imagePullPolicy: Always
+    name: whoami
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-5xk25
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: pool-hn1zv9hk2-u54ho
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-5xk25
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2022-02-02T12:47:36Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2022-02-02T12:47:40Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2022-02-02T12:47:40Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2022-02-02T12:47:36Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: containerd://7ffd44e030596f08c63e50daa50892bc9645b2ea133c8f9df1ef130f1489e115
+    image: docker.io/containous/whoami:latest
+    imageID: docker.io/containous/whoami@sha256:7d6a3c8f91470a23ef380320609ee6e69ac68d20bc804f3a1c6065fb56cfa34e
+    lastState: {}
+    name: whoami
+    ready: true
+    restartCount: 0
+    started: true
+    state:
+      running:
+        startedAt: "2022-02-02T12:47:39Z"
+  hostIP: 10.106.0.3
+  phase: Running
+  podIP: 10.244.1.146
+  podIPs:
+  - ip: 10.244.1.146
+  qosClass: BestEffort
+  startTime: "2022-02-02T12:47:36Z"

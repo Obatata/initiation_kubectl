@@ -1,0 +1,50 @@
+Name:         whoami
+Namespace:    default
+Priority:     0
+Node:         pool-hn1zv9hk2-u54ho/10.106.0.3
+Start Time:   Wed, 02 Feb 2022 13:47:36 +0100
+Labels:       <none>
+Annotations:  <none>
+Status:       Running
+IP:           10.244.1.146
+IPs:
+  IP:  10.244.1.146
+Containers:
+  whoami:
+    Container ID:   containerd://7ffd44e030596f08c63e50daa50892bc9645b2ea133c8f9df1ef130f1489e115
+    Image:          containous/whoami
+    Image ID:       docker.io/containous/whoami@sha256:7d6a3c8f91470a23ef380320609ee6e69ac68d20bc804f3a1c6065fb56cfa34e
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 02 Feb 2022 13:47:39 +0100
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-5xk25 (ro)
+Conditions:
+  Type              Status
+  Initialized       True 
+  Ready             True 
+  ContainersReady   True 
+  PodScheduled      True 
+Volumes:
+  kube-api-access-5xk25:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  11m   default-scheduler  Successfully assigned default/whoami to pool-hn1zv9hk2-u54ho
+  Normal  Pulling    11m   kubelet            Pulling image "containous/whoami"
+  Normal  Pulled     11m   kubelet            Successfully pulled image "containous/whoami" in 2.538937305s
+  Normal  Created    11m   kubelet            Created container whoami
+  Normal  Started    11m   kubelet            Started container whoami
