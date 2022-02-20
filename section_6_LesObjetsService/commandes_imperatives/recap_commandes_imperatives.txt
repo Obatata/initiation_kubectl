@@ -35,7 +35,7 @@ kubectl get svc / kubectl get service
 
 # infoirmation d'un service 
 kubectl describe svc SERVICE_NAME
-kubectl describe svc SERVICE_NAME -o yaml
+kubectl describe svc SERVICE_NAME
 
 # suppression d'un service
 kubectl delete svc/SERVICE_NAME

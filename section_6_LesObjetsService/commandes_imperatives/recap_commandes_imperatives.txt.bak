@@ -25,3 +25,18 @@ kubectl create service nodeport whoami --tcp 8080:80 --dry-run=client -o yaml
 # création d'un Pod + Service 
 -------------------------------------------
 kubectl run db --image=mongo:4.2 --port=27017 --expose --dry-run=client -o yaml
+
+
+##################################################################################################################
+####################   Les commandes de base    #####################################################################
+##################################################################################################################
+# lister l'ensemble des services 
+kubectl get svc / kubectl get service
+
+# infoirmation d'un service 
+kubectl describe svc SERVICE_NAME
+kubectl describe svc SERVICE_NAME -o yaml
+
+# suppression d'un service
+kubectl delete svc/SERVICE_NAME
+
